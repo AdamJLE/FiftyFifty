@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content=".." />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link href="css/index.css" rel="stylesheet" type="text/css">
+        <link href="css/game-menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/game.css" rel="stylesheet" type="text/css"/>
+        <link href="css/game2.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <div id="game-menu">
+
+            <div id="game" class="gpu">
+                <br><br>
+                <center class="pre-game-header center">Your Job<h1 id="selected-job">Chef</h1></center>
+                <br>
+                <p id="selected-job-description">{{TODO}}</p>
+                <button id="button-start-job">Start</button>
+            </div>
+
+            <div id="game-menu--gender-select" class="gpu">
+                <center class="game-menu--submenu-title">Gender</center>
+                <button id="game-menu--start" onclick="jobPrompt('male')">Male</button>
+                <button id="game-menu--start" onclick="jobPrompt('female')">Female</button>
+            </div>
+            
+            <!-- Main Menu -->
+            <div id="game-menu--container" class="gpu">
+                <center id="game-menu--title"></center>
+                <button id="game-menu--start" onclick="start()">Start</button>
+                <button id="game-menu--settings" onclick="settings()">Settings</button>
+                <button id="game-menu--statistics" onclick="statistics()">Statistics</button>
+                <button id="game-menu--credits" onclick="credits()">Credits</button>
+                <button id="game-menu--quit" onclick="quit()">Quit</button>
+            </div>
+
+            <!-- Settings -->
+            <div id="game-menu--settings-container" class="gpu">
+                <center class="game-menu--submenu-title">Settings</center>
+                <div class="game-menu--settings-option">
+                    <label for="game-menu--settings-music-enabled" class="game-menu--settings-label">Music enabled</label>
+                    <input type="checkbox" class="game-menu--settings-checkbox" id="game-menu--settings-music-enabled" checked/>
+                </div>
+                <div class="game-menu--settings-option">
+                    <label for="game-menu--settings-language" class="game-menu--settings-label">Language</label>
+                    <select id="game-menu--settings-language" class="game-menu--settings-select">
+                        <option>English</option>
+                        <option>Polish</option>
+                        <option>Portuguese</option>
+                    </select>
+                </div>
+                <button id="game-menu--close" onclick="mainMenu()">Back</button>
+            </div>
+
+            <!-- Statistics -->
+            <div id="game-menu--statistics-container" class="gpu">
+                <center class="game-menu--submenu-title">Statistics</center>
+                <p class="center">Check back after playing the game!</p>
+                <button id="game-menu--close" onclick="mainMenu()">Back</button>
+            </div>
+
+            <!-- Credits -->
+            <div id="game-menu--credits-container" class="gpu">
+                <center class="game-menu--submenu-title">Credits</center>
+                <div class="game-menu--info-panel">
+                    <p>Developed by Last Man Standing</p><br>
+                    <p>Built using Cordova, HTML5, CSS, JavaScript & jQuery</p><br>
+                    <p>Food icons designed by Smashicon, Vectors Market, Twitter from Flaticon</p>
+                </div>
+                <img class="game-menu--credits-logo" src="assets/last-man-standing.png" alt="Last Man Standing logo">
+                <img class="game-menu--credits-logo" src="assets/citizenschools.png" alt="CitizenSchools logo">
+                <button id="game-menu--close" onclick="mainMenu()">Back</button>
+            </div>
+
+        </div>
+        <script src="cordova.js" type="text/javascript"></script>
+        <script src="js/dep/jquery.js" type="text/javascript"></script>
+
+        <script src="js/util.js" type="text/javascript"></script>
+        <script src="js/menu.js" type="text/javascript"></script>
+        <script src="js/events.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+
+        <script src="js/chef.js" type="text/javascript"></script>
+        <script src="js/secondgame.js" type="text/javascript"></script>
+    </body>
+</html>

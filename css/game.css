@@ -1,0 +1,255 @@
+#game {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#bowl {
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../assets/bowl.png);
+    z-index: 300;
+    width: 100vw;
+    height: 100vw;
+    bottom: -200px;
+    pointer-events: none;
+}
+
+#game p {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#game .announce {
+    font-size: 48px;
+    color: #f8c545;
+    margin: 50px auto;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#game .statistic {
+    font-size: 20px;
+    color: #f8c545;
+    margin: 10px auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.food {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.current-food-item {
+    position: relative;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+}
+
+.item-1 {
+    top: 0;
+}
+
+.item-2 {
+    top: 20px;
+}
+
+.item-3 {
+    top: 40px;
+}
+
+.item-4 {
+    top: 60px;
+}
+
+.item-5 {
+    top: 80px;
+}
+
+.item-6 {
+    top: 100px;
+}
+
+.item-7 {
+    top: 120px;
+}
+
+.item-8 {
+    top: 140px;
+}
+
+.egg {
+    background-image: url(../assets/food/001-egg.png);
+}
+
+.steak {
+    background-image: url(../assets/food/002-steak.png);
+}
+
+.bread {
+    background-image: url(../assets/food/003-bread.png);
+}
+
+.pasta {
+    background-image: url(../assets/food/004-pasta.png);
+}
+
+.cheese {
+    background-image: url(../assets/food/005-cheese.png);
+}
+
+.onion {
+    background-image: url(../assets/food/006-onion.png);
+}
+
+.ham {
+    background-image: url(../assets/food/007-ham.png);
+}
+
+.salad {
+    background-image: url(../assets/food/008-salad.png);
+}
+
+.dough {
+    background-image: url(../assets/food/009-dough.png);
+}
+
+.tomato {
+    background-image: url(../assets/food/010-tomato.png);
+}
+
+.shrimp {
+    background-image: url(../assets/food/011-shrimp.png);
+}
+
+.pineapple {
+    background-image: url(../assets/food/012-pineapple.png);
+}
+
+.pear {
+    background-image: url(../assets/food/013-pear.png);
+}
+
+.mushrooms {
+    background-image: url(../assets/food/014-mushrooms.png);
+}
+
+.strawberry {
+    background-image: url(../assets/food/015-strawberry.png);
+}
+
+.apple {
+    background-image: url(../assets/food/016-apple.png);
+}
+
+.burger {
+    background-image: url(../assets/food/025-burger.png);
+}
+
+.pizza {
+    background-image: url(../assets/food/026-pizza.png);
+}
+
+.sandwich {
+    background-image: url(../assets/food/027-sandwich.png);
+}
+
+.spaghetti {
+    background-image: url(../assets/food/028-spaghetti.png);
+}
+
+.fruits {
+    background-image: url(../assets/food/029-fruits.png);
+}
+
+#score-counter {
+    z-index: 100;
+    color: #f8c545;
+    font-size: 2em;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+#wage-counter {
+    z-index: 100;
+    color: #f8c545;
+    font-size: 2em;
+    position: fixed;
+    top: 40px;
+    left: 10px;
+}
+
+#game button {
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px #f8c545 solid;
+    background-color: #434343;
+    color: #f8c545;
+    height: 45px;
+    width: 240px;
+    font-size: 1.1em;
+    display: block;
+    margin: 25px auto;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#timer {
+    z-index: 100;
+    color: #f8c545;
+    font-size: 2em;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+#current-recipe {
+    z-index: 100;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 50px;
+    height: 250px;
+    background-color: #434343;
+    border: 2px #f8c545 solid;
+}
+
+.tooltip-number {
+    pointer-events: none;
+    z-index: 200;
+    top: -10px;
+    color: #00ff00;
+    left: 0;
+}
+
+.negative {
+    color: #ff0000;
+}
+
+.food-crossed-off {
+    opacity: 0.5;
+}
+
+.food-crossed-off:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/)
+}
