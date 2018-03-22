@@ -83,3 +83,28 @@
 .apple-board {
     background-image: url(../assets/game2/016-apple-board.png);
 }
+
+#recipe-hint {
+    position: fixed;
+    background-color: #434343;
+    border: 2px #f8c545 solid;
+    font-size: 16px;
+    margin: 10px auto;
+    height: 70px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.food-item-hint {
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    z-index: 11;
+}
+
+#recipe-title {
+    font-size: 24px;
+}

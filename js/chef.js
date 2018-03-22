@@ -8,7 +8,7 @@ var finishedRecipes = 0;
 var numOfIngredients = 16;
 
 var maxScore = 100000;
-var timer = 15000;
+var timer = 1000;
 var seconds = timer / 1000;
 var intervalId;
 var renderIntervalId;
