@@ -106,5 +106,15 @@
 }
 
 #recipe-title {
-    font-size: 24px;
+    font-size: 32px;
+}
+
+.tick-row {
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    z-index: 12;
+    background-image: url(../assets/game2/check-symbol.png);
 }
