@@ -5,8 +5,10 @@ var totalWage = 0;
 var correctTaps = 0;
 var finishedRecipes = 0;
 
+var numOfIngredients = 16;
+
 var maxScore = 100000;
-var timer = 5000;
+var timer = 15000;
 var seconds = timer / 1000;
 var intervalId;
 var renderIntervalId;
@@ -21,6 +23,8 @@ var recipes = [
     [11, 8, 6, 10], // shrimp salad
     [12, 13, 16, 15] // fruit salad
 ];
+
+var recipeNames = ["Burger", "Spaghetti", "Sandwich", "Francesinha", "Pizza", "Shrimp Salad", "Fruit Salad"];
 
 var currentRecipe = recipes[Math.floor(Math.random() * recipes.length)];
 
@@ -156,7 +160,7 @@ function showText(text, millis, callback) {
 }
 
 function spawnFood(x, y) {
-    var type = Math.floor((Math.random() * 16) + 1);
+    var type = Math.floor((Math.random() * numOfIngredients) + 1);
     var verbose = getFoodNameById(type);
     $("#game").append("<div data-food-id=\"" + type + "\" class=\"food " + verbose + " gpu\" style=\"top: " + x + "px; left: " + y + "px;\" onclick=\"deleteFood(this, true)\"></div>");
 }
