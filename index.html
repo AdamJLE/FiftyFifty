@@ -12,7 +12,7 @@
         <link href="css/game.css" rel="stylesheet" type="text/css"/>
         <link href="css/game2.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body onload="pregame()">
 
         <div id="game-menu">
 
@@ -30,8 +30,14 @@
                 <button id="game-menu--start" onclick="jobPrompt('female')">Female</button>
             </div>
             
+            <div id="pre-game-splash" class="center" style="display: none;">
+                <p>50/50 is a game where you can perform standard tasks in a chef's workplace.</p><br>
+                <p>With that experience, you will be able to find out more about gender inequality and wage 
+                    gaps in the food industry.</p>
+            </div>
+            
             <!-- Main Menu -->
-            <div id="game-menu--container" class="gpu">
+            <div id="game-menu--container" class="gpu" style="display: none;">
                 <center id="game-menu--title"></center>
                 <button id="game-menu--start" onclick="start()">Start</button>
                 <button id="game-menu--settings" onclick="settings()">Settings</button>
@@ -61,7 +67,24 @@
             <!-- Statistics -->
             <div id="game-menu--statistics-container" class="gpu">
                 <center class="game-menu--submenu-title">Statistics</center>
-                <p class="center">Check back after playing the game!</p>
+                <div id="check-back">Check back after completing the game for more detailed statistics!<br><br></div>
+                <div id="personal-stats">
+                    <h3><i>Collect!</i> Statistics</h3>
+                    <p>Ingredients: </p>
+                    <p>Recipes: </p>
+                    <p>Score: </p>
+                    <p>Salary: </p>
+                    <br>
+                    <h3><i>Serve!</i> Statistics</h3>
+                    <p>Ingredients: </p>
+                    <p>Recipes: </p>
+                    <p>Score: </p>
+                    <p>Salary: </p>
+                    <br>
+                </div>
+                <ul>
+                    <li>There are more than 250,000 professional chefs in the UK, but only 18.5% of them are women. <span class="source">(source: Office for National Statistics UK 2015)</span></li>
+                </ul>
                 <button id="game-menu--close" onclick="mainMenu()">Back</button>
             </div>
 

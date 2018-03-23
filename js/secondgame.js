@@ -4,10 +4,17 @@ var index = 0;
 var maxSize;
 var currentRecipe;
 
-var seconds2 = 10;
+var score2 = 0;
+var ingredientsClicked2 = 0;
+var recipesComplete2 = 0;
+var wage2 = 0;
+
+var seconds2 = 60 * 0.5;
 var timerCountdownIntervalId2;
 var renderInterval;
 var taskId;
+
+var bothGamesFinished = false;
 
 function initSecondGame() {
     setTimeout(function () {
@@ -22,7 +29,9 @@ function begin2() {
     taskId = setTimeout(function () {
         $("#game").hide();
         $("#game").empty();
-        $("#game").append("<div id=\"timer\">Time: " + seconds2 + "</div>");
+        $("#game").append("<div id=\"score2\">Score: " + score2 + "</div>");
+        $("#game").append("<div id=\"salary2\">Salary: €" + Math.floor(wage2) + "</div>");
+        $("#game").append("<div id=\"timer2\">Time: " + seconds2 + "</div>");
 
         $("#game").append("<div id=\"game2-board\" class=\"gpu\"></div>");
 
@@ -75,7 +84,14 @@ function begin2() {
         $("#game").fadeIn(animationSpeed);
 
         renderInterval2 = setInterval(function () {
-            $("#timer").text("Time: " + seconds2);
+            if (assignedGender === "female") {
+                wage2 = score2 * 0.012 * 0.72;
+            } else {
+                wage2 = score2 * 0.012;
+            }
+            $("#timer2").text("Time: " + seconds2);
+            $("#score2").text("Score: " + score2);
+            $("#salary2").text("Salary: €" + Math.floor(wage2));
         }, 16);
 
         timerCountdownIntervalId2 = setInterval(function () {
@@ -92,12 +108,16 @@ function begin2() {
 function tap(div) {
     var id = parseInt($(div).attr("data-food-id"));
     if (id === recipes[currentRecipe][index]) {
+        ingredientsClicked2++;
         index++;
         $("#recipe-hint").append("<div class=\"tick-row\" style=\"left: " + (70 * (index - 1)) + "px\"></div>");
         //alert("Correct! " + index + " in a row");
         if (index >= recipes[currentRecipe].length) {
+            score2 += getRandomInt(200, 230);
+
             setTimeout(function () {
                 // shuffle recipe
+                recipesComplete2++;
                 currentRecipe = Math.floor(Math.random() * recipes.length);
                 $("#recipe-title").remove();
                 $("#recipe-hint").remove();
@@ -119,6 +139,7 @@ function tap(div) {
             $("#recipe-title").fadeOut(animationSpeed * 2);
         }
     } else {
+        ingredientsClicked2 -= index;
         index = 0;
         $(".tick-row").remove();
     }
@@ -147,10 +168,10 @@ function finish2() {
                             } else {
                                 $("#game").append("<div class=\"statistic\">Gender: Female</div>");
                             }
-                            $("#game").append("<div class=\"statistic\">Ingredients: </div>");
-                            $("#game").append("<div class=\"statistic\">Recipes: </div>");
-                            $("#game").append("<div class=\"statistic\">Score: </div>");
-                            $("#game").append("<div class=\"statistic\">Salary: €</div>");
+                            $("#game").append("<div class=\"statistic\">Ingredients: " + ingredientsClicked2 + "</div>");
+                            $("#game").append("<div class=\"statistic\">Recipes: " + recipesComplete2 + "</div>");
+                            $("#game").append("<div class=\"statistic\">Score: " + score2 + "</div>");
+                            $("#game").append("<div class=\"statistic\">Salary: €" + Math.floor(wage2 * 100) / 100 + "</div>");
 
                             $("#game").append("<button onclick=\"endGames()\">Complete</button>");
                             $("#game").fadeIn(animationSpeed);
@@ -163,5 +184,8 @@ function finish2() {
 }
 
 function endGames() {
+    bothGamesFinished = true;
     $("#game").empty();
+    $("#game-menu--container").fadeIn(animationSpeed);
+    $("#game-menu").css("background-image", "");
 }

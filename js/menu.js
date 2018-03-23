@@ -1,9 +1,23 @@
+/* global bothGamesFinished */
+
 var animationSpeed = 200;
 var assignedGender;
 
 function start() {
     fadeAllOut();
     $("#game-menu--gender-select").fadeIn(animationSpeed);
+}
+
+function pregame() {
+    $("#game-menu").css("background-image", "url()");
+    $("#pre-game-splash").fadeIn(animationSpeed * 2);
+    setTimeout(function() {
+        $("#pre-game-splash").fadeOut(animationSpeed * 3);
+        setTimeout(function() {
+            $("#game-menu--container").fadeIn(animationSpeed * 2);
+            $("#game-menu").css("background-image", "");
+        }, animationSpeed * 3);
+    }, 5000);
 }
 
 function jobPrompt(gender) {
@@ -27,6 +41,13 @@ function settings() {
 
 function statistics() {
     fadeAllOut();
+    if(bothGamesFinished) {
+        $("#personal-stats").show();
+        $("#check-back").hide();
+    } else {
+        $("#personal-stats").hide();
+        $("#check-back").show();
+    }
     setTimeout(function () {
         $("#game-menu--statistics-container").fadeIn(animationSpeed);
     }, animationSpeed);

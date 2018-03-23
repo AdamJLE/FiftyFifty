@@ -10,6 +10,7 @@
 }
 
 .food-item-board {
+    background-position: center;
     position: fixed;
     top: 10px;
     left: 10px;
@@ -85,6 +86,7 @@
 }
 
 #recipe-hint {
+    background-position: center;
     position: fixed;
     background-color: #434343;
     border: 2px #f8c545 solid;
@@ -97,6 +99,7 @@
 }
 
 .food-item-hint {
+    background-position: center;
     position: fixed;
     background-repeat: no-repeat;
     background-size: contain;
@@ -116,5 +119,33 @@
     height: 60px;
     width: 60px;
     z-index: 12;
+    background-position: center;
     background-image: url(../assets/game2/check-symbol.png);
+}
+
+#timer2 {
+    z-index: 100;
+    color: #f8c545;
+    font-size: 2em;
+    position: fixed;
+    top: calc(100vw - 160px);
+    right: 10px;
+}
+
+#score2 {
+    z-index: 100;
+    color: #f8c545;
+    font-size: 2em;
+    position: fixed;
+    top: calc(100vw - 160px);
+    left: 10px;
+}
+
+#salary2 {
+    z-index: 100;
+    color: #f8c545;
+    font-size: 2em;
+    position: fixed;
+    top: calc(100vw - 195px);
+    left: 10px;
 }
