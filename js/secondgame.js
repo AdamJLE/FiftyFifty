@@ -173,6 +173,16 @@ function finish2() {
                             $("#game").append("<div class=\"statistic\">Score: " + score2 + "</div>");
                             $("#game").append("<div class=\"statistic\">Salary: €" + Math.floor(wage2 * 100) / 100 + "</div>");
 
+                            var tempWage = 0;
+                            if (assignedGender === "male") {
+                                tempWage = score2 * 0.012 * 0.72;
+                            } else {
+                                tempWage = score2 * 0.012;
+                            }
+
+                            $("#game").append("<div class=\"statistic\">The opposite gender would be paid: €" + Math.round(tempWage * 100) / 100 + "</div>");
+
+
                             $("#game").append("<button onclick=\"endGames()\">Complete</button>");
                             $("#game").fadeIn(animationSpeed);
                         }, speed);

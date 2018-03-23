@@ -125,6 +125,15 @@ function finish() {
                             $("#game").append("<div class=\"statistic\">Score: " + Math.round(totalScore) + "</div>");
                             $("#game").append("<div class=\"statistic\">Salary: €" + Math.round(totalWage * 100) / 100 + "</div>");
                             
+                            var tempWage = 0;
+                            if (assignedGender === "male") {
+                                tempWage = totalScore * 0.012 * 0.72;
+                            } else {
+                                tempWage = totalScore * 0.012;
+                            }
+                            
+                            $("#game").append("<div class=\"statistic\">The opposite gender would be paid: €" + Math.round(tempWage * 100) / 100 + "</div>");
+
                             $("#game").append("<button onclick=\"nextGame()\">Continue</button>");
                             $("#game").fadeIn(animationSpeed);
                         }, speed);
@@ -137,7 +146,7 @@ function finish() {
 
 function nextGame() {
     $("#game").fadeOut(animationSpeed);
-    setTimeout(function() {
+    setTimeout(function () {
         $("#game").empty();
         initSecondGame();
     }, animationSpeed);
